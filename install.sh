@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 # Copyright (c) 2017 Antonia Stevens a@antevens.com
 
 #  Permission is hereby granted, free of charge, to any person obtaining a
