@@ -208,7 +208,7 @@ fi
 
 # Install the new Key/Cert, root does not need passwords like mere mortals
 echo "Ignore the following prompt for the Directory Manager's Password..."
-echo '' | ipa-server-certinstall -w -d "${letsencrypt_pem_dir}/fullchain.pem" "${letsencrypt_pem_dir}/privkey.pem" --dirman-password='' --pin=''
+echo '' | ipa-server-certinstall -w -d "${letsencrypt_pem_dir}/cert.pem" "${letsencrypt_pem_dir}/privkey.pem" --dirman-password='' --pin=''
 
 echo "Certificates updated; restarting services"
 
