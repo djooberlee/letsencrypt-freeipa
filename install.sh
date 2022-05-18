@@ -32,6 +32,8 @@ if [ "${EUID:-$(id -u)}" -ne "0" ] ; then
     echo "This script needs superuser privileges, suggest running it as root"
     exit 1
 fi
+dnf install epel-release -y
+dnf install certbot wget vim -y
 
 # If there is no TTY then it's not interactive
 if ! [[ -t 1 ]]; then
@@ -55,7 +57,7 @@ if [[ ${REPLY} =~ ^[Yy]$ ]]; then
     export interactive
     old_umask="$(umask)"
     umask 0002
-    wget https://raw.githubusercontent.com/antevens/letsencrypt-freeipa/master/register.sh -O - | bash
+    bash -c "$(curl https://raw.githubusercontent.com/antevens/letsencrypt-freeipa/master/register.sh)"
     wget https://raw.githubusercontent.com/antevens/letsencrypt-freeipa/master/renew.sh -O "${destination}"
     chown root:root "${destination}"
     chmod 0700 "${destination}"
