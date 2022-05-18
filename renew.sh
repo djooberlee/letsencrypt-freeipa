@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x
+set -x
 
 # Copyright (c) 2017 Antonia Stevens a@antevens.com
 
